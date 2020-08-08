@@ -1,0 +1,38 @@
+{% extends 'common.html' %}
+{% block sravani %}
+{% load static %}
+
+<table align="center" border="2">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Length</th>
+        <th>Rating</th>
+        <th>Rating_votes</th>
+        <th>Poster</th>
+        <th>Plot</th>
+        <th>Trailor</th>
+
+
+
+    </tr>
+    {% for x in data %}
+        <tr>
+        <th>{{ x.id }}</th>
+        <th>{{ x.title }}</th>
+        <th>{{ x.year }}</th>
+         <th>{{ x.length }}</th>
+        <th>{{ x.rating }}</th>
+        <th>{{ x.rating_votes }}</th>
+        <th><img src="{{ x.poster}}" width="200" height="200"></th>
+        <th>{{ x.plot }}</th>
+        <th><a href="{{ x.trailer }}" >{{ x.title }}trailer</a> </th>
+
+
+
+        </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}
